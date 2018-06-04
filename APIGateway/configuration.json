@@ -1,0 +1,75 @@
+﻿{
+  "ReRoutes": [
+    //Auth
+    {
+      "DownstreamPathTemplate": "/api/oauth2/token",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8000
+        }
+      ],
+      "UpstreamPathTemplate": "/api/oauth2/token",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    //afamily
+    {
+      "DownstreamPathTemplate": "/api/customers",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/afamily/customers",
+      "UpstreamHttpMethod": [ "Get" ],
+      //"RateLimitOptions": {
+      //  "ClientWhitelist": [],
+      //  "EnableRateLimiting": true,
+      //  "Period": "5m", //1s, 5m, 1h,1d and so on
+      //  "PeriodTimespan": 5, //This value specifies that we can retry after a certain number of seconds.
+      //  "Limit": 1
+      //},
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "Bearer",
+      //  "AllowedScopes": []
+      //}
+    },
+    {
+      "DownstreamPathTemplate": "/api/customers/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9001
+        }
+      ],
+      "UpstreamPathTemplate": "/api/afamily/customers/{id}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    //webthethao
+    {
+      "DownstreamPathTemplate": "/api/products",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 9002
+        }
+      ],
+      "UpstreamPathTemplate": "/api/webthethao/customers",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": "OcRequestId",
+    "AdministrationPath": "/administration",
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "API calls quota exceeded! maximum admitted 1 per 1s!",
+      "HttpStatusCode": 9999 //default 429(Too Many Requests)
+    }
+  }
+}
