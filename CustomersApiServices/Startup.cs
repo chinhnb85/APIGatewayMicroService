@@ -11,6 +11,8 @@ using Microsoft.Extensions.Options;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Common;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace CustomersApiServices
 {
@@ -64,7 +66,7 @@ namespace CustomersApiServices
             var jwtBearerEvents = new JwtBearerEvents
             {
                 OnAuthenticationFailed = context =>
-                {
+                {                    
                     return Task.CompletedTask;
                 },
                 OnTokenValidated = context =>
@@ -85,7 +87,7 @@ namespace CustomersApiServices
                     return Task.CompletedTask;
                 },
                 OnChallenge = context =>
-                {
+                {                   
                     return Task.CompletedTask;
                 }
             };
