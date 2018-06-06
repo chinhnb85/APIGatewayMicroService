@@ -32,10 +32,10 @@
       //  "PeriodTimespan": 5, //This value specifies that we can retry after a certain number of seconds.
       //  "Limit": 1
       //},
-      //"AuthenticationOptions": {
-      //  "AuthenticationProviderKey": "Bearer",
-      //  "AllowedScopes": []
-      //}
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     },
     {
       "DownstreamPathTemplate": "/api/customers/{id}",
@@ -60,7 +60,11 @@
         }
       ],
       "UpstreamPathTemplate": "/api/webthethao/customers",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": [ "Get" ],
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": "Bearer",
+        "AllowedScopes": []
+      }
     }
   ],
   "GlobalConfiguration": {
