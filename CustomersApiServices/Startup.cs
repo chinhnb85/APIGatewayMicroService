@@ -13,6 +13,8 @@ using Microsoft.IdentityModel.Tokens;
 using Common;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace CustomersApiServices
 {
@@ -113,7 +115,21 @@ namespace CustomersApiServices
                 app.UseDeveloperExceptionPage();
             }
 
+            //wwwroot folder -> ~/
             app.UseStaticFiles();
+
+            //MyStaticFiles folder -> ~/StaticFiles
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), "MyStaticFiles")),
+                RequestPath = "/StaticFiles",
+                OnPrepareResponse = ctx =>
+                {
+                    // Requires the following import:
+                    // using Microsoft.AspNetCore.Http;
+                    ctx.Context.Response.Headers.Append("Cache-Control", "public,max-age=600");
+                }
+            });
 
             app.UseAuthentication();
 
