@@ -5,7 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\" />
+    <Folder Include="MyStaticFiles\css\" />
+    <Folder Include="MyStaticFiles\images\" />
+    <Folder Include="MyStaticFiles\js\" />
+    <Folder Include="wwwroot\css\" />
+    <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\js\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CODE\Common\Common\Common.csproj" />
+    <ProjectReference Include="..\ShareCode\Common\Common.csproj" />
   </ItemGroup>
 
 </Project>
