@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CODE\Common\Common\Common.csproj" />
+    <ProjectReference Include="..\ShareCode\Common\Common.csproj" />
   </ItemGroup>
 
 </Project>
