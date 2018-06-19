@@ -1,21 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27004.2008
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APIGateway", "APIGateway\APIGateway.csproj", "{9A1D70B1-8597-417D-97F1-D8B8D43A624B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APIGateway", "APIGateway\APIGateway.csproj", "{9A1D70B1-8597-417D-97F1-D8B8D43A624B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomersApiServices", "CustomersApiServices\CustomersApiServices.csproj", "{5BA3D30C-99AD-4146-BAC2-DC10BFD80E58}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomersApiServices", "CustomersApiServices\CustomersApiServices.csproj", "{5BA3D30C-99AD-4146-BAC2-DC10BFD80E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductsApiServices", "ProductsApiServices\ProductsApiServices.csproj", "{24DCAE45-D177-4D2D-AF3A-2AE45C5A7F71}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductsApiServices", "ProductsApiServices\ProductsApiServices.csproj", "{24DCAE45-D177-4D2D-AF3A-2AE45C5A7F71}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthServer", "AuthServer\AuthServer.csproj", "{655428B7-33D6-41D9-9E9C-CB4897595337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AuthServer", "AuthServer\AuthServer.csproj", "{655428B7-33D6-41D9-9E9C-CB4897595337}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CODE", "CODE", "{AC989579-7ED5-4F73-B04D-A8940D799A09}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "ShareCode\Common\Common.csproj", "{F5514C8D-74AA-42D5-9CA6-56B0F61F5CF2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Util", "Util", "{DA1E1652-5A96-4A9C-9C81-3F803EC06A48}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "CODE\Common\Common\Common.csproj", "{F5514C8D-74AA-42D5-9CA6-56B0F61F5CF2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ShareCode", "ShareCode", "{374E4103-C3E3-4903-ABF2-33AE121FBBD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,8 +46,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{DA1E1652-5A96-4A9C-9C81-3F803EC06A48} = {AC989579-7ED5-4F73-B04D-A8940D799A09}
-		{F5514C8D-74AA-42D5-9CA6-56B0F61F5CF2} = {DA1E1652-5A96-4A9C-9C81-3F803EC06A48}
+		{F5514C8D-74AA-42D5-9CA6-56B0F61F5CF2} = {374E4103-C3E3-4903-ABF2-33AE121FBBD5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {93BBCEE3-12F9-40CF-978B-F90A7CC027CC}
