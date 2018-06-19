@@ -11,7 +11,9 @@
         }
       ],
       "UpstreamPathTemplate": "/api/oauth2/token",
-      "UpstreamHttpMethod": [ "Post" ]
+      "UpstreamHttpMethod": [ "Post" ],
+      "UpstreamHost": "localhost:9000", //somedomain.com
+      "Priority": 0 //0 is the lowest priority
     },
     //afamily
     {
@@ -21,10 +23,17 @@
         {
           "Host": "localhost",
           "Port": 9001
+        },
+        {
+          "Host": "localhost", //LeadConnection load balancer
+          "Port": 9001
         }
       ],
       "UpstreamPathTemplate": "/api/afamily/customers",
       "UpstreamHttpMethod": [ "Get" ],
+      "LoadBalancerOptions": {
+        "Type": "LeastConnection"
+      },
       //"RateLimitOptions": {
       //  "ClientWhitelist": [],
       //  "EnableRateLimiting": true,
