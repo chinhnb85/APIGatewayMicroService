@@ -10,20 +10,27 @@
   "profiles": {
     "IIS Express": {
       "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "api/values",
+      //"launchBrowser": true,
+      //"launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
     "ProductsApiServices": {
       "commandName": "Project",
-      "launchBrowser": true,
-      "launchUrl": "api/values",
+      //"launchBrowser": true,
+      //"launchUrl": "api/values",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "applicationUrl": "http://localhost:65273/"
+    },
+    "Kestrel": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      },
+      "applicationUrl": "http://localhost:65274/"
     }
   }
 }

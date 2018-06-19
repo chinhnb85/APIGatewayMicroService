@@ -13,9 +13,23 @@ namespace ProductsApiServices
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IHostingEnvironment env)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder();
+            builder.SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                    .AddJsonFile("appsettings.{env.EnvironmentName}.json", optional: true);                   
+
+            if (env.IsEnvironment("Development"))
+            {
+                // This will push telemetry data through Application Insights pipeline faster, allowing you to view results immediately.
+                builder.AddApplicationInsightsSettings(developerMode: true);
+            }
+
+            builder.AddEnvironmentVariables();
+            Configuration = builder.Build();
+
+            //Configuration = configuration;
         }
 
         public IConfiguration Configuration { get; }
@@ -34,7 +48,12 @@ namespace ProductsApiServices
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            //if (!env.IsProduction())
+            //{
+            //    throw new Exception("Not development.");
+            //}
+
+            app.UseMvcWithDefaultRoute();
         }
     }
 }
